@@ -93,11 +93,12 @@ const perguntas = [
 
 const quiz = document.querySelector('#quiz')
 const template = document.querySelector('template')
+const quizItem = template.content.cloneNode(true) 
 
 const corretas = new Set()
 const totalDePerguntas = perguntas.length
 const mostrarTotal = document.querySelector('#acertos span')
-mostratTotal.textContent = corretas.size + ' de ' + totalDePerguntas
+mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
 
 // loop ou laço de repetição
 for(const item of perguntas) {
@@ -118,8 +119,9 @@ for(const item of perguntas) {
                 corretas.add(item)
             }
 
-            mostratTotal.textContent = corretas.size + ' de ' + totalDePerguntas 
+            mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
         }
+
 
         quizItem.querySelector('dl').appendChild(dt)
     }
